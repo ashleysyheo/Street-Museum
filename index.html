@@ -9,8 +9,11 @@
         <title>Street Museum</title>
     </head>
     <body>
+        <div id="instruction">
+            <object type="image/svg+xml" data="instruction.svg"></object>
+        </div>
         <div id="map">
-            <img src="map6.png" alt="map">
+            <img src="map.png" alt="Map of New York">
         </div>
 
         <div id="route">
@@ -50,7 +53,7 @@
             <div id="viewport">
                 <!-- location 13 -->
                 <div class="frame box">
-                    <div class="container text text1">
+                    <div class="container text text2">
                         <object type="image/svg+xml" data="./label/label13.svg"></object>
                     </div>
                     <div class="container front">
@@ -70,7 +73,7 @@
 
                 <!-- location 12 -->
                 <div class="frame box">
-                    <div class="container text text1">
+                    <div class="container text text2">
                         <object type="image/svg+xml" data="./label/label12.svg"></object>
                     </div>
                     <div class="container front">
@@ -90,7 +93,7 @@
 
                 <!-- location 11 -->
                 <div class="frame box">
-                    <div class="container text text1">
+                    <div class="container text text2">
                         <object type="image/svg+xml" data="./label/label11.svg"></object>
                     </div>
                     <div class="container front">
@@ -334,9 +337,9 @@
                 if (currYPosition < scrollPositions[i+1]) {
                     let currPastImage = document.querySelector(`.container${i+1}`);
 
-                    if (event.keyCode === 37) {
+                    if (event.keyCode === 39) {
                         currPastImage.style.opacity = '0';
-                    } else if (event.keyCode === 39) {
+                    } else if (event.keyCode === 37) {
                         currPastImage.style.opacity = '1';
                     }
 
@@ -348,7 +351,6 @@
         let isScrolling;
         let lastScrollTop = 0;
         let down;
-        let scrollPositions2 = [0, 340, 640, 1240, 1840, 2740, 3940, 4540, 5140, 5740, 6040, 6340, 6940, 7540];
 
         window.onscroll = () => {
             let currYPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -395,32 +397,27 @@
 
             // Set a timeout to run after scrolling ends
             isScrolling = setTimeout(function() {
-                route.style.opacity = '0';
-                location.style.opacity = '0';
-
+                if (currYPosition >= 7540) {
+                    route.style.opacity = '1';
+                } else {
+                    route.style.opacity = '0';
+                    location.style.opacity = '0';
+                }
             }, 66);
-
-            // for (let i = 0; i < scrollPositions.length; i++) {
-            //     if (currYPosition < scrollPositions[i+1]) {
-            //         console.log(i, i+1);
-            //         let currPastImage = document.querySelector(`.container${i+1}`);
-            //         console.log(currPastImage);
-
-            //         if (event.keyCode === 37) {
-            //             currPastImage.style.opacity = '0';
-            //         } else if (event.keyCode === 39) {
-            //             currPastImage.style.opacity = '1';
-            //         }
-
-            //         break
-            //     }
-            // }
-
         }
 
+        window.onkeydown = (event) => {
+            let locationLabel = document.querySelectorAll('.text');
 
-    
-        // 37 39 
-
+            if (event.keyCode === 83) {
+                locationLabel.forEach(location => {
+                    location.style.opacity = '1';
+                });
+            } else if (event.keyCode === 72) {
+                locationLabel.forEach(location => {
+                    location.style.opacity = '0';
+                });
+            }
+        }
     </script>
 </html>
