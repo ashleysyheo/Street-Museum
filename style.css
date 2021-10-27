@@ -15,7 +15,7 @@ body {
     word-break: keep-all;
     cursor: default;
     height: 10400px;
-    /* background-image: url('./test.png'); */
+    scroll-behavior: smooth;
 }
 
 #map {
@@ -169,7 +169,21 @@ img {
 }
   
 .text {
-    transform: translateZ(150px) scale(0.5);
+    position: absolute;
+    z-index: 9999999;
+}
+
+.text1 {
+    transform: translateZ(150px) translateX(110rem) translateY(17rem);
+}
+
+.text2 {
+    transform: translateZ(150px) translateX(-80rem) translateY(17rem);
+}
+
+.text2 object {
+    position: absolute;
+    right: 0;
 }
   
 .move {
@@ -262,19 +276,3 @@ img {
     height: 90%;
     transform: translateX(38%);
 }
-  
-  #nofill {
-    stroke-width: 0 !important;
-  }
-  
-
-  
-  .end path {
-    fill-opacity: 1 !important;
-    fill: black !important;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke: 0px !important;
-      stroke-dashoffset: none !important;
-  }
-  
