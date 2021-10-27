@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Street Museum</title>
+    </head>
+    <body>
+        <div id="map">
+            <img src="map6.png" alt="map">
+        </div>
+
+        <div id="route">
+            <img src="./route/base.svg" id=base-route>
+            <img src="./route/route1.svg" class='active-route' id='route1'>
+            <img src="./route/route2.svg" class='active-route' id='route2'>
+            <img src="./route/route3.svg" class='active-route' id='route3'>
+            <img src="./route/route4.svg" class='active-route' id='route4'>
+            <img src="./route/route5.svg" class='active-route' id='route5'>
+            <img src="./route/route6.svg" class='active-route' id='route6'>
+            <img src="./route/route7.svg" class='active-route' id='route7'>
+            <img src="./route/route8.svg" class='active-route' id='route8'>
+            <img src="./route/route9.svg" class='active-route' id='route9'>
+            <img src="./route/route10.svg" class='active-route' id='route10'>
+            <img src="./route/route11.svg" class='active-route' id='route11'>
+            <img src="./route/route12.svg" class='active-route' id='route12'>
+            <img src="./route/route13.svg" class='active-route' id='route13'>
+        </div>
+
+        <div id="location">
+            <img src="./location/location1.svg" id="location1">
+            <img src="./location/location2.svg" id="location2">
+            <img src="./location/location3.svg" id="location3">
+            <img src="./location/location4.svg" id="location4">
+            <img src="./location/location5.svg" id="location5">
+            <img src="./location/location6.svg" id="location6">
+            <img src="./location/location7.svg" id="location7">
+            <img src="./location/location8.svg" id="location8">
+            <img src="./location/location9.svg" id="location9">
+            <img src="./location/location10.svg" id="location10">
+            <img src="./location/location11.svg" id="location11">
+            <img src="./location/location12.svg" id="location12">
+            <img src="./location/location13.svg" id="location13">
+        </div>
+
+        <div id="content">
+            <div id="viewport">
+                <!-- location 13 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/13_60-Spring-St_1940s.png" alt="" class="past container13" id="past-thirteen" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/13_60-Spring-St.png'>
+                    </div>
+                </div>
+
+                <!-- from 12 -> 13 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_12-13.png'>
+                    </div>
+                </div>
+
+                <!-- location 12 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/12_235-Bowery-St_1940s.png" alt="" class="past container12" id="past-twelve" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/12_235-Bowery-St.png'>
+                    </div>
+                </div>
+
+                <!-- from 11 -> 12 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_11-12.png'>
+                    </div>
+                </div>
+
+                <!-- location 11 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/11_315-Bowery-St_1940s.png" alt="" class="past container11" id="past-eleven" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/11_315-Bowery-St.png'>
+                    </div>
+                </div>
+
+                <!-- location 10 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/10_335-Bowery-St_1940s.png" alt="" class="past container10" id="past-ten" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/10_335-Bowery-St.png'>
+                    </div>
+                </div>
+
+                <!-- location 9 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/09_347-Bowery-St_1940s.png" alt="" class="past container9" id="past-nine" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/09_347-Bowery-St.png'>
+                    </div>
+                </div>
+
+                <!-- from 8 -> 9 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_8-9.png'>
+                    </div>
+                </div>
+
+                <!-- location 8 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/08_375-Lafayette-St_1940s.png" alt="" class="past container8" id="past-eight" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/08_375-Lafayette-St.png'>
+                    </div>
+                </div>
+
+                <!-- from 6 -> 7 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_7-8.png'>
+                    </div>
+                </div>
+
+                <!-- location 7 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/07_4-West-4th-St_1940s.png" alt="" class="past container7" id="past-seven" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/07_4-West-4th-St.png'>
+                    </div>
+                </div>
+
+                <!-- from 6 -> 7 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_6-7.png'>
+                    </div>
+                </div>
+
+                <!-- location 6 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/06_70-Washington-Square-South_1940s.png" alt="" class="past container6" id="past-six" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/06_70-Washington-Square-South.png'>
+                    </div>
+                </div>
+
+                <!-- from 5 -> 6 -4 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_5-6_4.png'>
+                    </div>
+                </div>
+
+                <!-- from 5 -> 6 -3 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_5-6_3.png'>
+                    </div>
+                </div>
+
+                <!-- from 5 -> 6 -2 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_5-6_2.png'>
+                    </div>
+                </div>
+
+                <!-- from 5 -> 6 -1 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_5-6_1.png'>
+                    </div>
+                </div>
+
+                <!-- location 5 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/05_404-6th-Ave_1940s.png" alt="" class="past container5" id="past-five" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/05_404-6th-Ave.png'>
+                    </div>
+                </div>
+
+                <!-- from 4 -> 5 -2 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_4-5_2.png'>
+                    </div>
+                </div>
+
+                <!-- from 4 -> 5 -1 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_4-5_1.png'>
+                    </div>
+                </div>
+
+                <!-- location 4 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/04_56-Greenwich-Ave_1940s.png" alt="" class="past container4" id="past-four" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/04_56-Greenwich-Ave.png'>
+                    </div>
+                </div>
+
+                <!-- from 3 -> 4 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_3-4.png'>
+                    </div>
+                </div>
+                
+                <!-- location 3 -->
+                <div class="frame box">
+                    <div class="container front">
+                        <img src="./1940s/03_97-Greenwich-Ave-1940s.png" alt="" class="past container3" id="past-three" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/03_97-Greenwich-Ave.png'>
+                    </div>
+                </div>
+
+                <!-- from 2 -> 3 -->
+                <div class="frame box">
+                    <div class="container mid">
+                        <img src='./intersection/intersection_2-3.png'>
+                    </div>
+                </div>
+
+                <!-- location 2 -->
+                <div class="frame box oneone">
+                    <div class="container front">
+                        <img src="./1940s/02_77-8th-Ave-at-14th-St_1940s.png" alt="" class="past container2" id="past-two" onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/02_77-8th-Ave-at-14th-St.png'>
+                    </div>
+                </div>
+
+                <!-- location 1 -->
+                <div class="frame box" style="-webkit-transform: translateZ(3000px);-moz-transform: translateZ(3000px);">
+                    <div class="container front">
+                        <img src="./1940s/01_81-8th-Ave_1940s.png" alt="" class="past container1" id='past-one' onkeydown="appearanceKey(this)">
+                    </div>
+                    <div class="container mid">
+                        <img src='./street-view/01_81-8th-Ave.png'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./script.js"></script>
+    <script>
+        let scrollPositions = [0, 340, 640, 1240, 1840, 2740, 4240, 4840, 5440, 6040, 6340, 6640, 7240, 7840];
+        // function disappear(self) {
+        //     let index = parseInt(self.classList[1].slice(9));
+        //     let currYPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        //     currYPosition < scrollPositions[index] ?  self.style.opacity = '0' : '';
+        // }
+
+        // function appear(self) {
+        //     let index = parseInt(self.classList[1].slice(9));
+        //     let currYPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        //     currYPosition < scrollPositions[index] ?  self.style.opacity = '1' : '';
+        // }
+
+        document.body.onkeydown = (event) => {
+            let currYPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            for (let i = 0; i < scrollPositions.length; i++) {
+                if (currYPosition < scrollPositions[i+1]) {
+                    let currPastImage = document.querySelector(`.container${i+1}`);
+
+                    if (event.keyCode === 37) {
+                        currPastImage.style.opacity = '0';
+                    } else if (event.keyCode === 39) {
+                        currPastImage.style.opacity = '1';
+                    }
+
+                    break
+                }
+            }
+        }
+
+        let isScrolling;
+        let lastScrollTop = 0;
+        let down;
+        let scrollPositions2 = [0, 340, 640, 1240, 1840, 2740, 3940, 4540, 5140, 5740, 6040, 6340, 6940, 7540];
+
+        window.onscroll = () => {
+            let currYPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            let route = document.getElementById('route');
+            let location = document.getElementById('location');
+
+            if (currYPosition > lastScrollTop){
+                down = true;
+            } else {
+                down = false;
+            }
+
+            lastScrollTop = currYPosition <= 0 ? 0 : currYPosition;
+
+            for (let i = 0; i < scrollPositions.length; i++) {
+                if (currYPosition < scrollPositions[i+1] && currYPosition > scrollPositions[i+1] - 300) {
+                    lastScrollTop = currYPosition <= 0 ? 0 : currYPosition; 
+
+                    let currLocation = document.getElementById(`location${i+1}`);
+                    let currRoute = document.getElementById(`route${i+1}`);
+
+                    // console.log(i);
+
+                    if (down) {
+                        currLocation.style.opacity = '0';
+                        if (currRoute) currRoute.style.opacity = '1';
+                    } else {
+                        currLocation.style.opacity = '1';
+                        if (currRoute) currRoute.style.opacity = '0';
+                    }
+                    
+
+
+                    
+                    break
+                }
+            }
+            
+
+            route.style.opacity = '1';
+            location.style.opacity = '1';
+
+            // Clear our timeout throughout the scroll
+            window.clearTimeout( isScrolling );
+
+            // Set a timeout to run after scrolling ends
+            isScrolling = setTimeout(function() {
+                route.style.opacity = '1';
+                location.style.opacity = '1';
+
+            }, 66);
+
+            // for (let i = 0; i < scrollPositions.length; i++) {
+            //     if (currYPosition < scrollPositions[i+1]) {
+            //         console.log(i, i+1);
+            //         let currPastImage = document.querySelector(`.container${i+1}`);
+            //         console.log(currPastImage);
+
+            //         if (event.keyCode === 37) {
+            //             currPastImage.style.opacity = '0';
+            //         } else if (event.keyCode === 39) {
+            //             currPastImage.style.opacity = '1';
+            //         }
+
+            //         break
+            //     }
+            // }
+
+        }
+
+
+    
+        // 37 39 
+
+    </script>
+</html>
